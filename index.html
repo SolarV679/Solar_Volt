@@ -1,0 +1,230 @@
+<!--
+Elaborado y comentado por el quipo Solar Volt del grupo Programación 405 del Colegio
+de Estudios Cientificos y Tecnologicos del Estado de México Chimalhuacán Plantel II.
+Esta página es declarada como propia, por lo tanto, puede haber reclamos y/o disputas por 
+el uso no autorizado o indebido del contenido o del código esta página o cualquier otra del sitio.
+-->
+
+ <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solar Volt</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="logo"><img src="img/logo.png" alt=""></div>
+    <nav>
+      <a href="#" onclick="cambiarSeccion('todo')">Todo</a>
+      <a href="#" onclick="cambiarSeccion('comprar')">Comprar</a>
+    </nav>
+    <button onclick="mostrarCarrito()" class="pop">
+  🛒(<span id="contador">0</span>)
+</button>
+  </header>
+
+  <main>
+    <!--<div class="tabs">
+      <div class="tab active" onclick="cambiarSeccion('todo')">Todo</div>
+      <div class="tab" onclick="cambiarSeccion('comprar')">Comprar</div>
+    </div> -->
+
+    <section class="seccion active" id="todo">
+      <br>
+<h2 class="seccion-titulo">Transforma tu energía con Solar Volt</h2>
+<p class="seccion-descripcion">Descubre cómo nuestro panel solar revoluciona el ahorro energético y cuida el planeta.</p>
+  <div class="carrusel" id="galeria1">
+    <div class="card"><img src="img/2.jpg"></div>
+    <div class="card"><img src="img/1.jpg"></div>
+    <div class="card"><img src="img/3.jpg"></div>
+  </div>
+  <h3 class="seccion-titulo-secundaria">Energía limpia, desde hoy</h3>
+<p class="seccion-descripcion-secundaria">
+Imagina un hogar autosuficiente, más eficiente y conectado con el futuro. Solar Volt lo hace posible.
+</p>
+  <div class="carrusel" id="galeria2">
+    <div class="card"><img src="img/4.jpg"></div>
+    <div class="card"><img src="img/5.jpg"></div>
+    <div class="card"><img src="img/6.jpg"></div>
+  </div>
+</section>
+
+    <section class="seccion" id="comprar">
+  <div class="comprar">
+    <div class="producto">
+      <img src="img/equisde.jpg">
+      <h3>Solar Volt</h3>
+      <p>$10,000 MXN</p>
+      <button onclick="agregarAlCarrito('Equipo terminado', 10000.00)" class="pop">Agregar</button>
+    </div>
+    <div class="producto">
+      <img src="img/panel.jpg">
+      <h3>Panel Solar</h3>
+      <p>$170 MXN</p>
+      <button onclick="agregarAlCarrito('Panel Solar', 170.00)" class="pop">Agregar</button>
+    </div>
+    <div class="producto">
+      <img src="img/esp32.jpg">
+      <h3>ESP32</h3>
+      <p>$200 MXN</p>
+      <button onclick="agregarAlCarrito('ESP32', 200.00)" class="pop">Agregar</button>
+    </div>
+    <div class="producto">
+      <img src="img/servo.jpg">
+      <h3>Servo Motor</h3>
+      <p>$100 MXN</p>
+      <button onclick="agregarAlCarrito('Servo Motor', 100.00)" class="pop">Agregar</button>
+    </div>
+    <div class="producto">
+      <img src="img/proto.jpg">
+      <h3>Protoboard</h3>
+      <p>$350 MXN</p>
+      <button onclick="agregarAlCarrito('Protoboard', 350.00)" class="pop">Agregar</button>
+    </div>
+    <div class="producto">
+      <img src="img/arduino.jpg">
+      <h3>Arduino</h3>
+      <p>$400 MXN</p>
+      <button onclick="agregarAlCarrito('Arduino', 400.00)" class="pop">Agregar</button>
+    </div>
+    <div class="producto">
+        <img src="img/impresion.jpg">
+        <h3>Impresión 3D</h3>
+        <p>$280</p>
+        <button onclick="agregarAlCarrito('Impresión 3D', 280.00)" class="pop">Agregar</button>
+    </div>
+    <div class="producto">
+        <img src="img/jumper.jpg">
+        <h3>Cable Jumper (paquete)</h3>
+        <p>$50</p>
+        <button onclick="agregarAlCarrito('Jumpers', 50.00)" class="pop">Agregar</button>
+    </div>
+  </div>
+</section>
+  </main>
+
+  <footer class="footer">     <!-- Pie de página -->
+  <div class="footer-content">
+    <div class="social-icons">      <!-- Iconos de redes sociales en el footer -->
+      <a href="https://github.com/tu-usuario" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-github"></i></a>
+      <a href="https://x.com/S0larV0lt" target="_blank" rel="noopener" aria-label="X (antes Twitter)"><i class="fab fa-x-twitter"></i></a>
+      <a href="https://www.instagram.com/solar_volt1?igsh=MXYxamZyMWM2aHZnZg==" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.youtube.com/channel/UC5uTgOLY50SemLUJl1w7haQ" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=solarvolt18@gmail.com" target="_blank" rel="noopener"><i class="fab fa-google"></i></a>
+    </div>
+
+    <ul class="footer-links">     <!-- Links principales de contacto en el footer -->
+      <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=solarvolt18@gmail.com" target="_blank" rel="noopener">Contacto</a></li>
+      <li><a href="#" id="abrirTerminos">Términos y condiciones</a></li>
+      <li><a href="#" id="abrirPrivacidad">Política de privacidad</a></li>
+      <li><a href="https://solarv679.github.io/SolarVolt/" target="_blank" rel="noopener" aria-label="GitHub">Acerca de nosotros</a></li>
+    </ul>
+  </div>
+
+  <p class="copyright">     <!-- Declaración de derechos de propiedad del uso y modificación de las páginas del sitio web -->
+    © 2025 CECyTEM Plantel Chimalhuacán II. Todos los derechos reservados.
+  </p>
+</footer>
+
+<div id="modalCarrito" class="modal-carrito">
+  <div class="modal-content">
+    <h2>Carrito de Compras</h2>
+    <ul id="listaCarrito"></ul>
+    <p>Total: <span id="totalCarrito">$0.00</span></p>
+
+    <label for="metodoPago">Método de pago:</label>
+    <select id="metodoPago">
+      <option value="paypal">PayPal</option>
+      <option value="efectivo">Efectivo</option>
+    </select>
+    <br><br>
+
+    <button id="btnCarritoAccion" class="pop">Pagar ahora</button>
+    <button onclick="cerrarCarrito()" class="pop">Cerrar</button>
+  </div>
+</div>
+
+<!-- Modal de Términos y Condiciones -->
+<div class="modal" id="modalTerminos">
+  <div class="modal-contenido">
+    <span class="cerrar" onclick="cerrarModal('modalTerminos')">&times;</span>
+    <h2>Términos y Condiciones</h2>
+    
+    <p><strong>Última actualización:</strong> Julio 2025</p>
+    
+    <p>Bienvenido al sitio web oficial del proyecto <strong>Solar Volt</strong>, desarrollado por estudiantes del grupo <strong>Programación 405</strong> del <strong>Colegio de Estudios Científicos y Tecnológicos del Estado de México (CECyTEM), Plantel Chimalhuacán II</strong>.</p>
+    
+    <p>Al acceder y navegar por este sitio web, aceptas los siguientes Términos y Condiciones. Si no estás de acuerdo con alguno de estos términos, te pedimos que no uses el sitio.</p>
+    
+    <h3>1. Finalidad del sitio</h3>
+    <p>Este sitio tiene fines <strong>educativos, informativos y demostrativos</strong>. Forma parte de un proyecto académico que busca <strong>proponer alternativas sostenibles a las fuentes de energía convencionales</strong>, destacando el desarrollo de un <strong>panel solar automatizado controlado con Arduino</strong>.</p>
+    
+    <h3>2. Propiedad intelectual</h3>
+    <p>Todos los contenidos del sitio —incluyendo textos, imágenes, código, gráficos y material audiovisual— han sido desarrollados por el equipo <strong>Solar Volt</strong>, salvo cuando se indique lo contrario. Cualquier uso no autorizado podrá ser considerado una <strong>violación a los derechos de autor</strong> del equipo desarrollador.</p>
+    
+    <h3>3. Uso del contenido</h3>
+    <p>Se permite ver, compartir y consultar la información aquí presentada <strong>únicamente con fines educativos y no comerciales</strong>. No está permitido copiar, reproducir, redistribuir o modificar el contenido para fines lucrativos sin consentimiento explícito.</p>
+    
+    <h3>4. Limitación de responsabilidad</h3>
+    <p>Este sitio web y el prototipo del sistema automatizado de panel solar forman parte de un trabajo académico. <strong>No garantizamos su funcionamiento en todos los entornos</strong> ni nos hacemos responsables por el uso inadecuado de la información o del prototipo.</p>
+    
+    <h3>5. Vínculos externos</h3>
+    <p>Este sitio puede contener enlaces a páginas externas (por ejemplo, redes sociales o plataformas de contacto). <strong>No nos responsabilizamos por el contenido o políticas</strong> de dichos sitios.</p>
+    
+    <h3>6. Cambios en los términos</h3>
+    <p>Nos reservamos el derecho de <strong>modificar estos términos</strong> en cualquier momento. Te recomendamos revisar esta sección periódicamente.</p>
+    
+    <h3>7. Contacto</h3>
+    <p>Para cualquier duda, comentario o aclaración, puedes escribirnos a:</p>
+    <p><strong>📧 solarvolt18@gmail.com</strong></p>
+  </div>
+</div>
+
+<!-- Modal de Política de Privacidad -->
+<div class="modal" id="modalPrivacidad">
+  <div class="modal-contenido">
+    <span class="cerrar" onclick="cerrarModal('modalPrivacidad')">&times;</span>
+    <h2>Política de Privacidad</h2>
+
+    <p><strong>Última actualización:</strong> Julio 2025</p>
+
+    <p>En <strong>Solar Volt</strong>, nos comprometemos a proteger la privacidad de los usuarios que visitan este sitio web como parte de nuestro proyecto académico. Esta política describe cómo manejamos la información recopilada a través del sitio.</p>
+
+    <h3>1. Información que recopilamos</h3>
+    <p>Este sitio <strong>no solicita, almacena ni recopila datos personales sensibles</strong>. Sin embargo, podríamos recibir información de contacto (como tu nombre o correo) si decides comunicarte con nosotros o realizar una compra.</p>
+
+    <h3>2. Uso de la información</h3>
+    <p>Cualquier información proporcionada será utilizada <strong>únicamente con fines de comunicación</strong>, seguimiento de pedidos o atención personalizada relacionada con el proyecto. <strong>No compartimos ni vendemos datos personales</strong> a terceros.</p>
+
+    <h3>3. Compras y pagos</h3>
+    <p>Este sitio permite visualizar productos relacionados con nuestro proyecto (como paneles solares, componentes electrónicos, etc.), pero las <strong>compras y pagos se realizan directamente con el equipo Solar Volt</strong>, mediante contacto personalizado.</p>
+    
+    <p><strong>No utilizamos pasarelas de pago en línea automatizadas</strong>. Todas las operaciones económicas se concretan de forma directa entre el cliente y nuestro equipo, a través de los medios previamente acordados (por ejemplo, transferencia bancaria, pago en efectivo o acuerdos escolares).</p>
+
+    <h3>4. Enlaces a sitios externos</h3>
+    <p>El sitio puede contener enlaces a plataformas externas como <strong>Instagram, YouTube, GitHub o correo electrónico</strong>. Cada uno de esos servicios cuenta con su propia política de privacidad, por lo que recomendamos revisarlas antes de compartir información.</p>
+
+    <h3>5. Seguridad</h3>
+    <p>Aunque no gestionamos bases de datos personales ni pagos en línea, adoptamos medidas básicas para mantener la seguridad del sitio y prevenir accesos no autorizados o manipulación de contenido.</p>
+
+    <h3>6. Cookies</h3>
+    <p>Este sitio <strong>no utiliza cookies propias</strong> ni tecnologías de seguimiento personal. No obstante, algunos servicios integrados (como imágenes de Unsplash o iconos de redes sociales) podrían utilizar cookies externas.</p>
+
+    <h3>7. Cambios en esta política</h3>
+    <p>Nos reservamos el derecho de <strong>modificar esta política en cualquier momento</strong>, especialmente si se integran nuevas funciones o formas de contacto o venta. La fecha de la última actualización se indica al principio de este documento.</p>
+
+    <h3>8. Contacto</h3>
+    <p>Para cualquier duda, comentario o consulta sobre esta política o sobre compras y pagos, contáctanos en:</p>
+    <p><strong>📧 solarvolt18@gmail.com</strong></p>
+  </div>
+</div>
+
+<div id="toast" class="toast">Producto agregado</div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

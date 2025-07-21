@@ -1,0 +1,391 @@
+:root {
+      --primario: #000;
+      --secundario: #f5f5f7;
+      --acento: #0071e3;
+      --texto: #1d1d1f;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      -webkit-user-select: none; 
+    -moz-user-select: none;    
+    -ms-user-select: none;     
+    user-select: none;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--secundario);
+      color: var(--texto);
+      overflow-x: hidden;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+    }
+
+    .logo img{
+      font-size: 1.5rem;
+      height: 40px;
+    }
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--texto);
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: var(--acento);
+    }
+
+    .carrito-icono {
+      cursor: pointer;
+      font-size: 1.2rem;
+    }
+
+    main {
+      padding-top: 80px;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .tab {
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      background-color: white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      transition: background 0.2s;
+    }
+
+    .tab:hover, .tab.active {
+      background-color: var(--acento);
+      color: white;
+    }
+
+    .seccion {
+      display: none;
+      animation: aparecer 0.8s ease forwards;
+    }
+
+    .seccion.active {
+      display: block;
+    }
+
+    @keyframes aparecer {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .carrusel {
+      display: flex;
+      gap: 1rem;
+      padding: 2rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+       justify-content: flex-start;
+    }
+
+@media (min-width: 1024px) {
+  .carrusel {
+    justify-content: center; /* Centra las tarjetas en pantallas grandes */
+    overflow-x: visible; /* Opcional: puedes quitar scroll horizontal */
+  }
+}
+
+    .card {
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+  background: white;
+  padding: 1rem;
+  border-radius: 20px;
+  width: 500px;
+  height: 350px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain; /* escala proporcional sin cortar */
+      display: block;
+      border-radius: 12px;
+      background-color: #f0f0f0;
+    }
+
+@media (max-width: 600px) {
+  .card {
+    max-width: 80%;
+  }
+  .card img {
+    max-height: 150px;
+    display: block;
+  }
+}
+
+    .comprar .producto {
+      background: white;
+      border-radius: 20px;
+      padding: 1.5rem;
+      margin: 2rem auto;
+      max-width: 600px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+  .comprar .producto img {
+  width: 100%;
+  height: 250px; /* Aumentas el alto para que quepa la imagen completa */
+  object-fit: contain; /* Muestra toda la imagen sin recortarla */
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  background-color: #f0f0f0; /* Relleno neutro si la imagen no llena todo */
+}
+
+footer { /* Diseño del pie de página */
+    position: relative;  /* Asegura que el footer esté correctamente posicionado */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box;
+    background-color: #222;
+    color: #fff;
+    padding: 20px 15px;  /* Ajusté los valores de padding para asegurar que no se acumule mucho espacio */
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 15px; /* Reduje un poco el padding */
+    display: flex;
+    flex-direction: column; /* Asegura que el contenido se apile en vez de estar en una fila */
+    justify-content: center;
+    align-items: center; /* Alinea los elementos */
+}
+
+.footer-content { /* Tamaño del contenido del pie de página */
+    max-width: 100%; /* Cambié max-width para que se ajuste a pantallas pequeñas */
+    padding: 0 10px;  /* Asegura que el contenido no se desborde */
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+    display: flex;
+    flex-direction: column;  /* Hace que los links se apilen verticalmente */
+    align-items: center;
+    gap: 10px;  /* Separa los elementos de los links */
+}
+
+.footer-links a {     /* Color y efecto del cursor sobre los links del pie de página */
+  color: #bbb;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {     /* Efecto para cambiar el color de los links mientras el cursor está sobre ellos */
+  color: #fff;
+}
+
+.social-icons {
+    margin-bottom: 15px;
+}
+
+.social-icons a {
+    color: #bbb;
+    margin: 5px;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #fff;
+}
+
+.footer p { /* Derechos de autor */
+    margin-top: 10px; /* Reduje el espacio entre el copyright y el contenido */
+    font-size: 12px;
+    color: #888;
+}
+
+.modal-carrito {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-carrito.active {
+  display: flex;
+}
+
+.modal-carrito .modal-content {
+  background-color: #fff;
+  color: #000;
+  margin: auto;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+    button {      /* Diseño de los botones de la página principal */
+    font-family: 'Inter', sans-serif;      /* Diseño principal del estilo de fuente de los botones */
+    background-color: var(--acento);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+.pop {
+    transition: all 0.3s ease;
+    transform: scale(1);
+  }
+  .pop:hover {
+    background-color: var(--acento);
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .modal {
+  display: none;
+  position: fixed;
+  z-index: 3000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(0,0,0,0.4);
+}
+
+.modal-contenido {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  font-family: 'Inter', sans-serif;
+  color: #1d1d1f;
+  position: relative;
+}
+
+.cerrar {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+}
+
+.cerrar:hover {
+  color: #000;
+}
+
+.toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--acento);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 9999;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-10px);
+}
+
+.seccion-titulo {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+.seccion-descripcion {
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #555;
+}
+.seccion-titulo-secundaria {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+.seccion-descripcion-secundaria {
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #555;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
